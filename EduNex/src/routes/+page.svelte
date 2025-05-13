@@ -9,11 +9,12 @@
 		<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
 			<form action="" class="mt-12 w-full">
 				<div
-					class="relative flex flex-col gap-4 rounded-full border border-red-200 bg-white p-4 shadow-md md:flex-row md:items-center md:justify-end"
+					class="relative flex flex-col gap-0 rounded-full border border-red-200 bg-white p-0 shadow-md md:flex-row md:items-center md:justify-between w-full"
 				>
+					<!-- Matière Dropdown -->
 					<select
 						name="categorie"
-						class="rounded-full border border-gray-300 px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-[#6b1f1b]"
+						class="rounded-l-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
 					>
 						<option value="">Matière</option>
 						<option value="math">Mathématiques</option>
@@ -22,16 +23,18 @@
 						<option value="langues">Langues</option>
 					</select>
 
+					<!-- Difficulté Dropdown -->
 					<select
 						name="difficulte"
-						class="rounded-full border border-gray-300 px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-[#6b1f1b]"
+						class="rounded-r-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
 					>
-						<option value="">Difficulté</option>
+						<option value="">Niveau</option>
 						<option value="debutant">Débutant</option>
 						<option value="intermediaire">Intermédiaire</option>
 						<option value="avance">Avancé</option>
 					</select>
 
+					<!-- Submit Button -->
 					<button
 						type="submit"
 						title="Search"

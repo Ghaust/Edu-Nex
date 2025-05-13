@@ -1,13 +1,13 @@
 <script lang="ts">
 	import '../app.css';
-	import logo from '../lib/logo_final.png';
+	import logo from '../lib/logo_fin.png';
 
 	let { children } = $props();
 </script>
 
 <nav class="border-gray-200 bg-[#ffe9e5] dark:bg-gray-900">
 	<div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-		<a class="flex items-center space-x-3 rtl:space-x-reverse">
+		<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
 			<img src={logo} class="h-11" alt="Logo" />
 		</a>
 		<div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
