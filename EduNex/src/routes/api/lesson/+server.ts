@@ -22,14 +22,33 @@ const connection = await mysql.createConnection({
  * @param url L'url reçu
  * @returns La réponse en format JSON
  */
-export async function GET({ url } : getInterface) {
-    try {
-        const [rows] = await connection.execute('SELECT * FROM lesson');
-        return json(rows);
-    } catch (error : any) {
-        return json({ error: error.message });
-    } finally {
-        await connection.end();
-    }
-    
+export async function GET({ url }: getInterface) {
+	const level = url.searchParams.get('level');
+	const subject = url.searchParams.get('subject');
+
+	let query = 'SELECT * FROM lesson';
+	let conditions: string[] = [];
+	let values: any[] = [];
+
+	if (level) {
+		conditions.push('level = ?');
+		values.push(level);
+	}
+
+	if (subject) {
+		conditions.push('subject = ?');
+		values.push(subject);
+	}
+
+	if (conditions.length > 0) {
+		query += ' WHERE ' + conditions.join(' AND ');
+	}
+
+	try {
+		const [rows] = await connection.execute(query, values);
+		return json(rows);
+	} catch (error: any) {
+		return json({ error: error.message });
+	}
 }
+
