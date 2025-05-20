@@ -2,11 +2,20 @@
     import { onMount } from 'svelte';
 
     let lessons = [];
+    let subject = "";
+    let level = "";
 
-    // Fonction pour récupérer les données de l'API
+    // Fonction pour récupérer les données de l'API en fonction des filtres
     async function fetchLessons() {
         try {
-            const response = await fetch('http://localhost:5173/api/lesson');
+            let url = 'http://localhost:5173/api/lesson';
+
+            // Ajout des paramètres de filtre à l'URL si nécessaires
+            if (subject || level) {
+                url += `?subject=${subject}&level=${level}`;
+            }
+
+            const response = await fetch(url);
             lessons = await response.json();
         } catch (error) {
             console.error('Erreur lors de la récupération des leçons:', error);
@@ -17,38 +26,52 @@
     onMount(() => {
         fetchLessons();
     });
+
+    // Fonction pour gérer la soumission du formulaire de recherche
+    function handleSearch(event) {
+        event.preventDefault();
+        fetchLessons();
+    }
 </script>
 
+<!-- Section de recherche -->
 <div class="flex flex-col min-h-screen">
-    <section class="ml-5 rounded-bl-full rounded-br-full bg-[#6b1f1b] bg-blend-multiply">
-        <div class="mx-auto max-w-screen-xl px-4 py-10">
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-0 top-0">
-                <form action="" class="mt-12 w-full">
-                    <div
-                        class="relative flex flex-col gap-0 rounded-full border border-red-200 bg-white p-0 shadow-md md:flex-row md:items-center md:justify-between w-full"
-                    >
+    <section class="ml-5 rounded-b-full rounded-l-full bg-[#6b1f1b] bg-blend-multiply">
+        <div class="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+                Chercher le <span class="border-b-8 border-[#ffdedc] italic">Cours</span> qui vous correspond
+            </h1>
+            <br />
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <form on:submit={handleSearch} class="mt-12 w-full">
+                    <div class="relative flex flex-col gap-0 rounded-full border border-red-200 bg-white p-0 shadow-md md:flex-row md:items-center md:justify-between w-full">
+                        <!-- Matière Dropdown -->
                         <select
-                            name="categorie"
+                            name="subject"
+                            bind:value={subject}
                             class="rounded-l-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
                         >
-                            <option value="">Matière</option>
-                            <option value="math">Mathématiques</option>
-                            <option value="science">Sciences</option>
-                            <option value="informatique">Informatique</option>
-                            <option value="langues">Langues</option>
+						<option value="">Matière</option>
+						<option value="Math">Math</option>
+						<option value="Science">Sciences</option>
+						<option value="Anglais">Anglais</option>
+						<option value="Français">Français</option>
                         </select>
 
+                        <!-- Difficulté Dropdown -->
                         <select
-                            name="difficulte"
+                            name="level"
+                            bind:value={level}
                             class="rounded-r-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
                         >
-                            <option value="">Niveau</option>
-                            <option value="Primaire">Primaire</option>
-                            <option value="CO">CO</option>
-                            <option value="College">Collège</option>
-                            <option value="Universite">Université</option>
+						<option value="">Niveau</option>
+						<option value="Primaire">Primaire</option>
+						<option value="CO">CO</option>
+						<option value="Collège">Collège</option>
+						<option value="Universite">Université</option>
                         </select>
 
+                        <!-- Submit Button -->
                         <button
                             type="submit"
                             title="Search"
