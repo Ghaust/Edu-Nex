@@ -1,7 +1,7 @@
 <script>
     import titre from '../../lib/support_titre.png';
 </script>
-
+<div class="flex flex-col min-h-screen">
 <section class="bg-[#ffe9e5] py-12">
     <div class="mx-auto max-w-screen-xl px-4 text-center">
         <!-- Titre de la page avec image -->
@@ -11,9 +11,9 @@
         <!-- Informations de contact -->
         <div class="mb-12 space-y-4 text-lg">
             <p class="text-[#6b1f1b]">Si vous avez besoin d'aide, n'hésitez pas à nous contacter !</p>
-            <p>Email : <a href="mailto:support@example.com" class="text-[#cb4141] hover:underline">support@example.com</a></p>
-            <p>Téléphone : <a href="tel:+123456789" class="text-[#cb4141] hover:underline">+1 (234) 567-89</a></p>
-            <p>Adresse : 123 Rue Exemple, Ville, Pays</p>
+            <p>Email : <a href="mailto:contact@eptm.ch" class="text-[#cb4141] hover:underline">contact@eptm.ch</a></p>
+            <p>Téléphone : <a href="tel:+0276064530" class="text-[#cb4141] hover:underline">+41 027 552 10 52</a></p>
+            <p>Adresse : Chemin Saint-Hubert 2, 1950 Sion</p>
         </div>
 
         <!-- Formulaire de contact -->
@@ -52,3 +52,4 @@
         </div>
     </div>
 </section>
+</div>

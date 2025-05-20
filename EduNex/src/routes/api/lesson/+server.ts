@@ -55,4 +55,3 @@ export async function GET({ url }: getInterface) {
 		return json({ error: error.message });
 	}
 }
-
