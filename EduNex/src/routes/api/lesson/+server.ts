@@ -1,17 +1,21 @@
 import mysql from 'mysql2/promise';
 import { json } from '@sveltejs/kit';
-// import { PGSQL_CONNECTION } from "$env/static/private";
+import { MYSQL_HOST } from "$env/static/private";
+import { MYSQL_USER } from "$env/static/private";
+import { MYSQL_PASSWORD } from "$env/static/private";
+import { MYSQL_DATABASE } from "$env/static/private";
+import { MYSQL_PORT } from "$env/static/private";
 
 interface getInterface {
     url : URL;
 }
 
 const connection = await mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Pa$$w0rd',
-  database: 'edunex',
-  port: 3306
+  host: MYSQL_HOST,
+  user: MYSQL_USER,
+  password: MYSQL_PASSWORD,
+  database: MYSQL_DATABASE,
+  port: parseInt(MYSQL_PORT)
 });
 
 /**
