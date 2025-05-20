@@ -28,8 +28,6 @@ export async function GET({ url } : getInterface) {
         return json(rows);
     } catch (error : any) {
         return json({ error: error.message });
-    } finally {
-        await connection.end();
     }
     
 }

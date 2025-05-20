@@ -1,3 +1,4 @@
+<div class="flex flex-col min-h-screen">
 <section class="ml-5 rounded-b-full rounded-l-full bg-[#6b1f1b] bg-blend-multiply">
 	<div class="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
 		<h1
@@ -47,3 +48,4 @@
 		</div>
 	</div>
 </section>
+</div>
