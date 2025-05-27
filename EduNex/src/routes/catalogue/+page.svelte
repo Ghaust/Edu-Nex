@@ -8,7 +8,7 @@
     // Fonction pour récupérer les données de l'API en fonction des filtres
     async function fetchLessons() {
         try {
-            let url = 'http://localhost:5173/api/lesson';
+            let url = 'http://localhost:80/api/lesson';
 
             // Ajout des paramètres de filtre à l'URL si nécessaires
             if (subject || level) {
