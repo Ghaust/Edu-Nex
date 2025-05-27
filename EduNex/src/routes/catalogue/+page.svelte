@@ -51,7 +51,8 @@
                             bind:value={subject}
                             class="rounded-l-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
                         >
-						<option value="">Matière</option>
+						<option disabled value="">Matière</option>
+                        <option value="">Toute les matières</option>
 						<option value="Math">Math</option>
 						<option value="Science">Sciences</option>
 						<option value="Anglais">Anglais</option>
@@ -64,7 +65,8 @@
                             bind:value={level}
                             class="rounded-r-full border-none px-4 py-2 text-black focus:outline-none focus:ring-0 focus:border-[#6b1f1b] w-full md:w-1/2 bg-[#f8f8f8] hover:bg-[#f1f1f1]"
                         >
-						<option value="">Niveau</option>
+						<option disabled value="">Niveau</option>
+                        <option value="">Tout les niveaux</option>
 						<option value="Primaire">Primaire</option>
 						<option value="CO">CO</option>
 						<option value="Collège">Collège</option>

@@ -12,7 +12,7 @@
         <div class="mb-12 space-y-4 text-lg">
             <p class="text-[#6b1f1b]">Si vous avez besoin d'aide, n'hésitez pas à nous contacter !</p>
             <p>Email : <a href="mailto:contact@eptm.ch" class="text-[#cb4141] hover:underline">contact@eptm.ch</a></p>
-            <p>Téléphone : <a href="tel:+0276064530" class="text-[#cb4141] hover:underline">+41 027 552 10 52</a></p>
+            <p>Téléphone : <a href="tel:+0276064530" class="text-[#cb4141] hover:underline">027 552 10 52</a></p>
             <p>Adresse : Chemin Saint-Hubert 2, 1950 Sion</p>
         </div>
 
